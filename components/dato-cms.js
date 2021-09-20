@@ -33,6 +33,7 @@ export async function getFeaturedProducts() {
         }
         shortDescription
         preco
+        productState
       }
     
       _allProductsMeta {
