@@ -1,0 +1,48 @@
+.containerFeatured {
+    margin-top: 2rem;
+}
+
+.navbar {
+    color: white;
+    background-color: black !important;
+}
+
+.listItems {
+    display: flex;
+}
+
+.listItems.card {
+    margin: 10px;
+}
+
+.imageFeatured {
+    width: 100%;
+    max-width: 150px;
+}
+
+.cards {
+    border: 1px solid black;
+    padding: 1rem;
+}
+
+.containerProducts {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.thumbProducts {
+    min-width: 200px;
+    margin: 10px;
+}
+
+@media  (max-width: 600px) {
+    .thumbProducts {
+        width: 100%;
+    }
+
+    .containerLast, .containerFeatured {
+        text-align: center;
+    }
+}
