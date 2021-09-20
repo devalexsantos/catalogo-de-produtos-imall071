@@ -1,4 +1,4 @@
-import styles from '../assets/css/main.module.css';
+import styles from '../pages/assets/css/main.module.css';
 import MensagemWhats from './MensagemWhats';
 import Carousel from 'react-elastic-carousel';
 import styled from 'styled-components';

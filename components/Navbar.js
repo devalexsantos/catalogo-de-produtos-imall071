@@ -1,4 +1,3 @@
-import styles from '../assets/css/main.module.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Navbar() {

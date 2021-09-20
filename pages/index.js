@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Header from './components/Header';
-import FeaturedProducts from './components/FeaturedProducts';
-import LastProducts from './components/LastProducts';
+import Header from '../components/Header';
+import FeaturedProducts from '../components/FeaturedProducts';
+import LastProducts from '../components/LastProducts';
 import { getFeaturedProducts, getLastProducts } from './dato-cms';
 import Script from 'next/script'
 

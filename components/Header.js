@@ -1,4 +1,4 @@
-import styles from '../assets/css/main.module.css';
+import styles from '../pages/assets/css/main.module.css';
 import Navbar from './Navbar';
 
 export default function Header() {
