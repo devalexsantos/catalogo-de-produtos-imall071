@@ -1,9 +1,13 @@
 import MensagemWhats from './MensagemWhats';
 import Carousel from 'react-elastic-carousel';
 import { StateNew, StateShowcase, StateUsed } from './StatesProducts';
+import styled from 'styled-components';
+import Link from 'next/link'
 
 
 export default function LastProducts(props) {
+
+
 
     const breakPoints = [
         { width: 1, itemsToShow: 1 },
@@ -11,11 +15,6 @@ export default function LastProducts(props) {
         { width: 768, itemsToShow: 3 },
         { width: 900, itemsToShow: 4 },
     ];
-
-    const settings = {
-        arrows: false,
-    }
-
     const changePrice = (num) => {
         let preco = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(num);
         return preco;
@@ -42,9 +41,11 @@ export default function LastProducts(props) {
             <div className="container mx-auto text-center p-3">
                 <div>
                     <div>
-                        <Carousel breakPoints={breakPoints} showArrows={false}>
+                        <div className="exemplo">
+                        <Carousel className="" breakPoints={breakPoints}>
                             {props.last.map(item => (
-                                <div className="container" key={item.id}>
+                                <Link href={`/produto/${item.id}`}>
+                                <div className="container cursor-pointer" key={item.id}>
                                     <div className="max-w-md w-full m-2 bg-white shadow-sm rounded-xl p-6">
                                         <div className="flex flex-col">
                                             <div className="relative h-62 w-full mb-3">
@@ -78,8 +79,10 @@ export default function LastProducts(props) {
                                         </div>
                                     </div>
                                 </div>
+                                </Link>
                             ))}
                         </Carousel>
+                        </div>
                     </div>
 
                 </div>

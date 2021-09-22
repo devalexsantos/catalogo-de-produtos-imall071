@@ -4,8 +4,11 @@ module.exports = {
   theme: {
     extend: {},
   },
+  
   variants: {
-    extend: {},
+    extend: {
+      responsive: ['sm', 'md', 'lg', 'x1']
+    },
   },
   plugins: [
     require('@tailwindcss/line-clamp'),

@@ -1,6 +1,7 @@
 import MensagemWhats from './MensagemWhats';
 import Carousel from 'react-elastic-carousel';
 import { StateNew, StateShowcase, StateUsed } from './StatesProducts';
+import Link from 'next/link'
 
 
 export default function FeaturedProducts(props) {
@@ -42,9 +43,10 @@ export default function FeaturedProducts(props) {
             <div className="container mx-auto text-center p-3">
                 <div>
                     <div>
-                        <Carousel breakPoints={breakPoints} showArrows={false}>
+                        <Carousel breakPoints={breakPoints}>
                             {props.featured.map(item => (
-                                <div className="container" key={item.id}>
+                                <Link href={`/produto/${item.id}`}>
+                                <div className="container cursor-pointer" key={item.id}>
                                     <div className="max-w-md w-full m-2 bg-white shadow-sm rounded-xl p-6">
                                         <div className="flex flex-col">
                                             <div className="relative h-62 w-full mb-3">
@@ -78,6 +80,7 @@ export default function FeaturedProducts(props) {
                                         </div>
                                     </div>
                                 </div>
+                                </Link>
                             ))}
                         </Carousel>
                     </div>

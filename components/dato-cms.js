@@ -67,4 +67,67 @@ export async function getLastProducts() {
   return data.allProducts;
 }
 
-export default { getFeaturedProducts, getLastProducts }
+export async function getAllProducts() {
+  const data = await fetchCmsAPI(`
+  {
+    allProducts (orderBy: _createdAt_DESC) {
+      id
+      title
+      featuredImage {
+        url
+      }
+      shortDescription
+      preco
+    }
+  
+    _allProductsMeta {
+      count
+    }
+  }
+  `);
+
+  return data.allProducts;
+}
+
+export async function getFilterProducts(id) {
+  const data = await fetchCmsAPI(`
+  {
+    allProducts (filter: {id: {eq: ${id}}}) {
+      id
+      title
+      featuredImage {
+        url
+      }
+      shortDescription
+      preco
+      productState
+      gallery {
+        id
+        url
+      }
+    }
+  
+    _allProductsMeta {
+      count
+    }
+  }
+  `);
+
+  return data.allProducts;
+}
+
+export async function getCategories() {
+  const data = await fetchCmsAPI(`
+  {
+    allProductCategories(orderBy: categoryTitle_ASC) {
+      categoryTitle
+    }
+  }
+  `);
+
+  return data.allProductCategories;
+}
+
+
+
+export default { getFeaturedProducts, getLastProducts, getCategories, getAllProducts, getFilterProducts }
