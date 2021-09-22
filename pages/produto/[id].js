@@ -17,7 +17,7 @@ const Product = ({ cat, product }) => (
 
             <main className="container">
                 {product.map(item => (
-                    <div>
+                    <div key={item.id}>
                         <ProductItem
                             title={item.title}
                             state={item.productState}

@@ -45,8 +45,8 @@ export default function FeaturedProducts(props) {
                     <div>
                         <Carousel breakPoints={breakPoints}>
                             {props.featured.map(item => (
-                                <Link href={`/produto/${item.id}`}>
-                                <div className="container cursor-pointer" key={item.id}>
+                                <Link href={`/produto/${item.id}`} key={item.id}>
+                                <div className="container cursor-pointer">
                                     <div className="max-w-md w-full m-2 bg-white shadow-sm rounded-xl p-6">
                                         <div className="flex flex-col">
                                             <div className="relative h-62 w-full mb-3">

@@ -29,16 +29,18 @@ const Home = ({ featured, last, cat }) => (
   </div>
 );
 
-Home.getInitialProps = async () => {
+export async function getServerSideProps() {
   const featuredProducts = await getFeaturedProducts();
   const lastProducts = await getLastProducts();
   const categories = await getCategories();
 
 
   return {
-    featured: featuredProducts,
-    last: lastProducts,
-    cat: categories,
+    props: {
+      featured: featuredProducts,
+      last: lastProducts,
+      cat: categories,
+    }
   }
 };
 

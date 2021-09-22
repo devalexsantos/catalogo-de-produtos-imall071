@@ -1,6 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { getCategories } from './dato-cms';
-import ListCategories from './ListCategories';
 
 const Navbar = (props) => (
 
@@ -18,17 +17,19 @@ const Navbar = (props) => (
                                     TODAS AS CATEGORIAS
                                 </a>
                                 <ul className="dropdown-menu dropdown-menu-right" aria-labelledby="navbarScrollingDropdown">
-                                    <ListCategories cat={props.cat} />
+                                    {props.cat.map(item=>(
+                                        <li key={item.categoryTitle}><a className="dropdown-item" href="#">{item.categoryTitle}</a></li>
+                                    ))}
                                 </ul>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link text-white" href="#">SERVIÇOS</a>
+                                <a className="nav-link text-white" href="#" key="servicos">SERVIÇOS</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link text-white" href="#">SOBRE NÓS</a>
+                                <a className="nav-link text-white" href="#" key="sobre">SOBRE NÓS</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link text-white" href="#">CONTATO</a>
+                                <a className="nav-link text-white" href="#" key="contato">CONTATO</a>
                             </li>
                         </ul>
                     </div>
