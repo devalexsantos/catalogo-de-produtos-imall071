@@ -1,13 +1,86 @@
-/* ./styles/globals.css */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
 
-@layer utilities {
-    
-    @media(max-width: 600px) {
+*{
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+main, .section {
+    background-color: #E5E7EB;
+}
+    .main-carousel {
+        margin-bottom: 3rem;
+    }
+
+    .carousel {
+        background: #EEE;
+      }
+      
+      .carousel-cell {
+        width: 20%;
+        margin: 5px;
+        border-radius: 5px;
+        background: white;
+        border-radius: 10px;
+        -webkit-box-shadow: 0px 2px 3px 2px rgba(0,0,0,0.22); 
+box-shadow: 0px 2px 3px 2px rgba(0,0,0,0.10);
+margin-bottom: 20px;
+        margin-top: 10px;
+        transition: all 0.2s cubic-bezier(0.680, -0.550, 0.265, 1.550);
+      }
+
+      .carousel-cell.is-selected {
+        background: white;
+        border-radius: 10px;
+        -webkit-box-shadow: 0px 2px 3px 2px rgba(0,0,0,0.22); 
+box-shadow: 0px 2px 3px 2px rgba(0,0,0,0.10);
+        margin-bottom: 20px;
+        margin-top: 10px;
+        transition: all 0.2s cubic-bezier(0.680, -0.550, 0.265, 1.550);
+      }
+
+      .carousel-cell.is-selected:hover, .carousel-cell:hover{
+        transform: scale(1.04);
+      }
+
+
+      .carousel-cell img {
+          width: 100%;
+          object-fit: contain;
+          border-radius: 10px;
+      }
+
+      .carousel-cell p {
+          margin: 1rem;
+          line-height: 1.5em;
+          height: 3em;
+          overflow: hidden;
+          
+      }
+
+      .product-price {
+          font-weight: 700;
+      }
+      
+
+      @media(max-width: 600px) {
         button.rec-arrow {
             display: none;
         }
-    }
-}
+        .carousel-cell {
+            width: 50%;
+            margin: 0;
+
+            
+        }
+
+        .carousel-cell.is-selected {
+            margin: 0;
+
+        }
+
+        .flickity-prev-next-button {
+            display: none;
+          }
+    }      
+
