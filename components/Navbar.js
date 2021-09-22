@@ -8,7 +8,7 @@ const Navbar = (props) => (
             <nav className="navbar navbar-expand-sm navbar-light">
                 <div className="mx-auto d-sm-flex d-block flex-sm-nowrap">
                     <button className="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
+                       MENU <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse text-center" id="navbarsExample11">
                         <ul className="navbar-nav">

@@ -5,11 +5,11 @@ import Link from 'next/link'
 
 export default function Header(props) {
     return (
-        <div className="w-auto bg-gray-900">
+        <div className="container-flui bg-dark">
             <div className="container mx-auto text-center p-3">
                 <div className="row">
                     <div className="col-12" rel="noreferrer">
-                        <Link href="/">
+                        <a href="https://catalogo-de-produtos-imall071.vercel.app/" rel="noreferrer">
                                 <div className="cursor-pointer">
                         <Image
                             src="/logo-imall.png"
@@ -18,7 +18,7 @@ export default function Header(props) {
                             height={150}
                         />
                         </div>
-                        </Link>
+                        </a>
                     </div>
                 </div>
             </div>

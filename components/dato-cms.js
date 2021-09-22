@@ -48,7 +48,7 @@ export async function getFeaturedProducts() {
 export async function getLastProducts() {
   const data = await fetchCmsAPI(`
   {
-    allProducts (first: "5", orderBy: _createdAt_DESC) {
+    allProducts (first: "9", orderBy: _createdAt_DESC) {
       id
       title
       featuredImage {
