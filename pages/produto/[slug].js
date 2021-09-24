@@ -1,9 +1,10 @@
 import Head from 'next/head';
-import Header from '../../components/Header';
+import Header from '../../src/components/Head/Header';
 import Script from 'next/script';
-import { getCategories, getFilterProducts } from '../../components/dato-cms';
-import ProductItem from '../../components/ProductItem';
-import Footer from '../../components/Footer';
+import { getCategories, getFilterProducts } from '../api/dato-cms';
+import ProductItem from '../../src/components/Products/Item/ProductItem';
+import Footer from '../../src/components/Footer/Footer';
+import 'bootstrap/dist/css/bootstrap.css';
 
 
 const Product = ({ cat, product }) => (
@@ -37,7 +38,7 @@ const Product = ({ cat, product }) => (
 );
 
 export async function getServerSideProps(context) {
-    const response = await getFilterProducts(context.params.id);
+    const response = await getFilterProducts(context.params.slug);
     const categories = await getCategories();
 
     return {

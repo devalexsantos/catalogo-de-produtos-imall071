@@ -1,0 +1,22 @@
+.icons {
+    color: white;
+    text-decoration: none;
+    margin-right: 1rem;
+    display: none;
+    list-style: none;
+}
+
+.icons li {
+    margin-right: 2rem;
+    font-size: 28pt;
+}
+
+.icons li:last-child {
+    margin-right: 0;
+}
+
+@media (max-width: 574px) {
+    .icons {
+        display: flex;
+    }
+}

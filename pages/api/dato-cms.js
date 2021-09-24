@@ -34,6 +34,7 @@ export async function getFeaturedProducts() {
         shortDescription
         preco
         productState
+        slug
       }
     
       _allProductsMeta {
@@ -56,6 +57,8 @@ export async function getLastProducts() {
       }
       shortDescription
       preco
+      productState
+      slug
     }
   
     _allProductsMeta {
@@ -89,10 +92,10 @@ export async function getAllProducts() {
   return data.allProducts;
 }
 
-export async function getFilterProducts(id) {
+export async function getFilterProducts(slug) {
   const data = await fetchCmsAPI(`
   {
-    allProducts (filter: {id: {eq: ${id}}}) {
+    allProducts (filter: {slug: {eq: "${slug}"}}) {
       id
       title
       featuredImage {
@@ -101,6 +104,7 @@ export async function getFilterProducts(id) {
       shortDescription
       preco
       productState
+      slug
       gallery {
         id
         url

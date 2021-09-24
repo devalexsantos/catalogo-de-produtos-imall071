@@ -1,0 +1,13 @@
+.imageSingle img{
+    width: 100%;
+    border-radius: 15px;
+}
+
+.infoContentSingle h1 {
+    margin-bottom: 0;
+}
+
+.productSinglePrice{
+    font-weight: 700;
+    font-size: 32px;
+}
