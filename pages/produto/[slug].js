@@ -11,7 +11,7 @@ export async function getStaticPaths() {
     return {
         paths: [{
             params: {
-                slug: ''
+                slug: '/'
             }
         }],
         fallback: 'blocking'
