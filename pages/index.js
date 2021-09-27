@@ -7,7 +7,8 @@ import Script from 'next/script';
 import Footer from '../src/components/Footer/Footer';
 import 'bootstrap/dist/css/bootstrap.css';
 
-export async function getServerSideProps() {
+
+export async function getStaticProps() {
   const featuredProducts = await getFeaturedProducts();
   const lastProducts = await getLastProducts();
   const categories = await getCategories();
@@ -18,7 +19,8 @@ export async function getServerSideProps() {
       featured: featuredProducts,
       last: lastProducts,
       cat: categories,
-    }
+    },
+    revalidate: 3600
   }
 };
 
