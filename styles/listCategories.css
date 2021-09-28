@@ -1,0 +1,11 @@
+.content-product-info {
+    background-color: white;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.content-product-info img{
+    width: 100%;
+}

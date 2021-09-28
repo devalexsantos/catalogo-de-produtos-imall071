@@ -1,4 +1,5 @@
 import styles from './Navbar.module.css';
+import Link from 'next/link';
 
 export default function Navbar(props) {
 
@@ -31,7 +32,7 @@ export default function Navbar(props) {
                                 </a>
                                 <ul className="dropdown-menu dropdown-menu-dark dropdown-menu-macos mx-0 border-0 shadow" aria-labelledby="navbarScrollingDropdown">
                                     {props.cat.map(item=>(
-                                        <li key={item.categoryTitle}><a className="dropdown-item" href="#">{item.categoryTitle}</a></li>
+                                        <li key={item.categoryTitle}><Link href={`/categoria/${item.slugCategory}`}><a className="dropdown-item">{item.categoryTitle}</a></Link></li>
                                     ))}
                                 </ul>
                             </li>

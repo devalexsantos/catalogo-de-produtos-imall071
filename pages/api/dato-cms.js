@@ -120,10 +120,53 @@ export async function getFilterProducts(slug) {
   return data.allProducts;
 }
 
+export async function getCategoryProducts(slug) {
+  const data = await fetchCmsAPI(`
+  {
+    allProducts (filter: {category: {eq: "${slug}"}}) {
+      id
+      title
+      featuredImage {
+        url
+      }
+      shortDescription
+      preco
+      productState
+      slug
+      gallery {
+        id
+        url
+      }
+    }
+  
+    _allProductsMeta {
+      count
+    }
+  }
+  `);
+
+  return data.allProducts;
+}
+
 export async function getCategories() {
   const data = await fetchCmsAPI(`
   {
     allProductCategories(orderBy: categoryTitle_ASC) {
+      categoryTitle
+      slugCategory
+    }
+  }
+  `);
+
+  return data.allProductCategories;
+}
+
+export async function getFilterCategories(slug) {
+  const data = await fetchCmsAPI(`
+  {
+    allProductCategories(filter: {slugCategory: {eq: "${slug}"}}) {
+      id
+      slugCategory
       categoryTitle
     }
   }
@@ -132,6 +175,26 @@ export async function getCategories() {
   return data.allProductCategories;
 }
 
+export async function getFilterCategoriesProduct(id) {
+  const data = await fetchCmsAPI(`
+  {
+    allProducts(filter: {category: {eq: "${id}"}}) {
+      title
+      preco
+      productState
+      slug
+      featuredImage {
+        url
+      }
+    }
+  }
+  `);
+
+  return data.allProducts;
+}
 
 
-export default { getFeaturedProducts, getLastProducts, getCategories, getAllProducts, getFilterProducts }
+
+
+
+export default { getFeaturedProducts, getLastProducts, getCategories, getAllProducts, getFilterProducts, getCategoryProducts, getFilterCategories, getFilterCategoriesProduct }

@@ -31,7 +31,6 @@
 
       .product-info {
           display: block;
-          flex-direction: column;
           margin-bottom: 15px;
       }
 
@@ -40,14 +39,6 @@
           display: block;
       }
 
-      .product-state-new {
-        font-size: 10pt;
-        margin-bottom: 10px;
-        background-color: rgb(61, 134, 61);
-        padding: 5px;
-        color: white;
-        border-radius: 8px;
-    }
 
     .featured-products {
         padding-top: 30px;

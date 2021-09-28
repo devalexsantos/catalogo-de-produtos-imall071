@@ -77,7 +77,7 @@ export default function FeaturedProducts(props) {
                                     </div>
                                     <p>{item.title}</p>
                                     <div className="product-info">
-                                        <span className="product-price mb-2">{changePrice(item.preco)}</span>
+                                        <span className="product-price mb-2 text-center">{changePrice(item.preco)}</span>
                                         {productState(item.productState)}
                                     </div>
                                 </div>

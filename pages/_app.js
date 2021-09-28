@@ -1,5 +1,6 @@
 import '../styles/globals.css';
 import '../styles/carousels.css';
+import '../styles/listCategories.css';
 import Router from 'next/router';
 import NProgress from 'nprogress';
 
