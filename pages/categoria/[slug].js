@@ -98,7 +98,7 @@ export function ProductCategory({ cat, product, slug, error}){
                <div className="row justify-content-md-center">
                    {product.map(item=>(
                        <Link href={`/produto/${item.slug}`} key={item.title}>
-                       <div className="col-3 content-product-info m-2 cursor-pointer logo">
+                       <div className="col-sm-12 col-md-4 col-lg-3 col-xl-3 content-product-info m-2 cursor-pointer logo">
                            <img src={item.featuredImage.url}/>
                            <div className="product-info text-center">
                            <p className="text-center">{item.title}</p>

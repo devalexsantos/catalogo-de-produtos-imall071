@@ -6,8 +6,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 export default function Header(props) {
 
     return (
-        <>
-        <div className="container-flui bg-dark">
+        <div className="container-fluid bg-dark nav-shadow-menu">
             <div className="container mx-auto text-center p-3">
                 <div className="row">
                     <div className="col-12" rel="noreferrer">
@@ -29,6 +28,5 @@ export default function Header(props) {
             <Navbar cat={props.cat} />
             </div>
         </div>
-        </>
     )
 }

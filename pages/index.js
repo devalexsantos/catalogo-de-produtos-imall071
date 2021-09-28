@@ -6,6 +6,7 @@ import { getFeaturedProducts, getLastProducts, getCategories } from './api/dato-
 import Script from 'next/script';
 import Footer from '../src/components/Footer/Footer';
 import 'bootstrap/dist/css/bootstrap.css';
+import Toolbar from '../src/components/Toolbar/Toolbar';
 
 
 export async function getStaticProps() {
@@ -38,6 +39,7 @@ export default function Home({ featured, last, cat }) {
       <Header cat={cat} />
         <div className="section">
           <div className="container">
+            <Toolbar/>
             <FeaturedProducts featured={featured} />
             <LastProducts last={last} />
           </div>

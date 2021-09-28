@@ -1,14 +1,13 @@
 import styles from './Navbar.module.css';
 import Link from 'next/link';
+import Script from 'next/script';
 
 export default function Navbar(props) {
 
 
     return (
         <>
-            <div className="container-fluid text-center margin-auto bg-dark">
-        <div className="container">
-             <nav className="navbar navbar-expand-sm navbar-light">
+             <nav className="navbar navbar-expand-sm navbar-light text-center margin-auto">
                 <div className="mx-auto d-sm-flex d-block flex-sm-nowrap justify-content-between">
                     <ul className={styles.icons}>
                         <li>
@@ -48,10 +47,10 @@ export default function Navbar(props) {
                         </ul>
                     </div>
                 </div>
-            </nav> 
-        </div>
-    </div>
+            </nav>
+            <Script src="https://kit.fontawesome.com/33c943d672.js" crossorigin="anonymous"></Script> 
         </>
+        
     )
 
 

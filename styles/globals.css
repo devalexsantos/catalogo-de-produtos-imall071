@@ -13,6 +13,11 @@ main, .section {
     width: 100%;
 }
 
+header {
+    background-color: #E5E7EB; 
+    width: 100%;
+}
+
 .logo {
     cursor: pointer;
 }
@@ -21,11 +26,53 @@ main, .section {
     width: 100%;
 }
 
+iframe {
+    width: 100%;
+}
+
+footer {
+    -webkit-box-shadow: 0px -4px 0px 0px #000000; 
+box-shadow: 0px -4px 0px 0px #000000;
+}
+
+.navbar-position {
+    position: fixed;
+}
+
+.toolbar {
+    display: flex;
+    justify-content: center;
+}
+
+.toolbar ul{
+    display: flex;
+    margin: auto;
+    list-style: none;
+}
+
+.toolbar li {
+    margin-right: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.toolbar i {
+    font-size: 24pt;
+    margin: auto;
+}
+
+
+.nav-shadow-menu {
+    -webkit-box-shadow: 0px 5px 0px 0px #000000; 
+box-shadow: 0px 5px 0px 0px #000000;
+background-color: #E5E7EB;
+}
+
     .top-nav-bar {
         display: flex;
         justify-content: space-between;
         margin: auto;
-        width: 100%;
     }
       
       @media(max-width: 575px) {
