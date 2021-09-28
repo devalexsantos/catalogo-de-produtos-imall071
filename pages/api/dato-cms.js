@@ -178,7 +178,7 @@ export async function getFilterCategories(slug) {
 export async function getFilterCategoriesProduct(id) {
   const data = await fetchCmsAPI(`
   {
-    allProducts(filter: {category: {eq: "${id}"}}) {
+    allProducts(filter: {category: {eq: "${id}"}}, orderBy: preco_DESC) {
       title
       preco
       productState

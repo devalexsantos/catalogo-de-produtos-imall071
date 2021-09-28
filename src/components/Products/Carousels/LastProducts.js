@@ -71,7 +71,7 @@ export default function LastProducts(props) {
                 <Slider {...settings}>
                     {props.last.map(item => (
                         <div className="card-wrapper" key={item.id}>
-                            <Link href={`/produto/${item.id}`}>
+                            <Link href={`/produto/${item.slug}`}>
                                 <div className="card">
                                     <div className="card-image">
                                         <img src={item.featuredImage.url} />
