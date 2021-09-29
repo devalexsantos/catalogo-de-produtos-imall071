@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import {New, Showcase, Used} from "../Item/Status";
+import { New, Showcase, Used } from "../Item/Status";
 
 
 
@@ -10,7 +10,7 @@ import {New, Showcase, Used} from "../Item/Status";
 export default function LastProducts(props) {
 
     let settings = {
-        dot: true,
+        dots: true,
         infinite: true,
         speed: 500,
         slidesToShow: 4,
@@ -52,37 +52,39 @@ export default function LastProducts(props) {
     const productState = (state) => {
 
         if (state === 'novo') {
-            return <New/>;
+            return <New />;
         }
 
         if (state === 'vitrine') {
-            return <Showcase/>;
+            return <Showcase />;
         }
 
         if (state === 'usado') {
-            return <Used/>;
+            return <Used />;
         }
     }
 
     return (
         <div className="last-products">
             <h5 className="container text-lg text-center sm:text-left">Acabaram de chegar</h5>
-            <div className="container mx-auto text-center p-3">
+            <div className="container mx-auto text-center p-3 pb-5">
                 <Slider {...settings}>
                     {props.last.map(item => (
-                        <div className="card-wrapper" key={item.id}>
-                            <Link href={`/produto/${item.slug}`}>
-                                <div className="card">
-                                    <div className="card-image">
-                                        <img src={item.featuredImage.url} />
+                        <div className="slider-content" key={item.id}>
+                            <div className="card-wrapper">
+                                <Link href={`/produto/${item.slug}`}>
+                                    <div className="card">
+                                        <div className="card-image">
+                                            <img src={item.featuredImage.url} />
+                                        </div>
+                                        <p className="mt-3">{item.title}</p>
+                                        <div className="product-info pb-4 mb-3">
+                                            <span className="product-price mb-2 text-center">{changePrice(item.preco)}</span>
+                                            {productState(item.productState)}
+                                        </div>
                                     </div>
-                                    <p>{item.title}</p>
-                                    <div className="product-info">
-                                        <span className="product-price mb-2">{changePrice(item.preco)}</span>
-                                        {productState(item.productState)}
-                                    </div>
-                                </div>
-                            </Link>
+                                </Link>
+                            </div>
                         </div>
                     ))}
                 </Slider>

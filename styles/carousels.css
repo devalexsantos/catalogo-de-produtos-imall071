@@ -1,18 +1,22 @@
-.card-wrapper {
+.slider-content .card-wrapper {
     width: 100%;
     padding: 0 10px;
     box-sizing: border-box;
     border-radius: 150px;
     }
 
-    .card-image img {
+    .slider-content .card-image img {
         width: 100%;
     }
 
-    .card{
+    .card-image img {
+        width: 10%;
+    }
+
+    .slider-content .card{
         width: 100%;
-        overflow: hidden;
         cursor: pointer;
+        overflow: hidden;
     }
 
     .slick-arrow.slick-prev::before {
@@ -27,6 +31,28 @@
         position: relative;
     }
 
+
+    .galleryProduct .slick-arrow.slick-prev::before {
+        color: black;
+        font-size: 25pt;
+        margin-left: -15px;
+        position: relative;
+    }
+
+    .galleryProduct .slick-arrow.slick-next::before {
+        color: black;
+        font-size: 25pt;
+        position: relative;
+    }
+
+    .galleryProduct {
+        padding: 2rem;
+    }
+
+    .slick-dots li button:before
+    {
+        font-size: 10px !important;
+    }
     
 
       .product-info {

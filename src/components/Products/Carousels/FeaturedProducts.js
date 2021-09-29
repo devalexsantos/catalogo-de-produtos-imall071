@@ -2,12 +2,12 @@ import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Link from 'next/link';
-import {New, Showcase, Used} from "../Item/Status";
+import { New, Showcase, Used } from "../Item/Status";
 
 export default function FeaturedProducts(props) {
 
     let settings = {
-        dot: true,
+        dots: true,
         infinite: true,
         speed: 500,
         slidesToShow: 4,
@@ -16,30 +16,30 @@ export default function FeaturedProducts(props) {
         swipeToSlide: true,
         responsive: [
             {
-              breakpoint: 1024,
-              settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3,
-                infinite: true,
-                dots: true
-              }
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                    dots: true
+                }
             },
             {
-              breakpoint: 770,
-              settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2,
-                initialSlide: 2
-              }
+                breakpoint: 770,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    initialSlide: 2
+                }
             },
             {
-              breakpoint: 480,
-              settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
-              }
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
             }
-          ]
+        ]
     }
 
     const changePrice = (num) => {
@@ -50,15 +50,15 @@ export default function FeaturedProducts(props) {
     const productState = (state) => {
 
         if (state === 'novo') {
-            return <New/>;
+            return <New />;
         }
 
         if (state === 'vitrine') {
-            return <Showcase/>;
+            return <Showcase />;
         }
 
         if (state === 'usado') {
-            return <Used/>;
+            return <Used />;
         }
     }
 
@@ -68,22 +68,24 @@ export default function FeaturedProducts(props) {
             <div className="container mx-auto text-center pb-5 pt-2">
                 <Slider {...settings}>
                     {props.featured.map(item => (
-                        
-                            <div className="card-wrapper" key={item.id}>
-                                <Link href={`/produto/${item.slug}`} passHref>
-                                <div className="card">
-                                    <div className="card-image">
-                                        <img src={item.featuredImage.url} />
+                        <Link href={`/produto/${item.slug}`} key={item.id}>
+                        <div className="slider-content">
+                            <div className="card-wrapper">
+                                
+                                    <div className="card">
+                                        <div className="card-image">
+                                            <img src={item.featuredImage.url} />
+                                        </div>
+                                        <p className="mt-3">{item.title}</p>
+                                        <div className="product-info pb-4 mb-3">
+                                            <span className="product-price mb-2 text-center">{changePrice(item.preco)}</span>
+                                            {productState(item.productState)}
+                                        </div>
                                     </div>
-                                    <p>{item.title}</p>
-                                    <div className="product-info">
-                                        <span className="product-price mb-2 text-center">{changePrice(item.preco)}</span>
-                                        {productState(item.productState)}
-                                    </div>
-                                </div>
-                                </Link>
+                               
                             </div>
-                       
+                        </div>
+                         </Link>
                     ))}
                 </Slider>
             </div>

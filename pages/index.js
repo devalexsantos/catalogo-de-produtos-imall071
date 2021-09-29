@@ -46,7 +46,6 @@ export default function Home({ featured, last, cat }) {
         </div>
        </main>   
           <Footer />
-            <Script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></Script>
             <Script src="https://kit.fontawesome.com/33c943d672.js" crossorigin="anonymous"></Script>
             <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossOrigin="anonymous"></Script>
           </div>
