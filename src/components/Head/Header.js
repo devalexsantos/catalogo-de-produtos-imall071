@@ -20,7 +20,7 @@ export default function Header(props) {
                         />
                         </Link>
                         </div>
-                        <h1 className="fs-4 text-white mb-0">Manutenção e Venda de Computadores, Celulares e Acessórios</h1>
+                        <h1 className="fs-4 text-white mb-0">Manutenção e Venda de Computadores, Celulares e Acessórios.</h1>
                     </div>
                 </div>
             </div>
